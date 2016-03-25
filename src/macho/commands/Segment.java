@@ -104,6 +104,9 @@ public class Segment extends AbstractMachOCommand {
         return section;
     }
 
+    /**
+     * This class represents a Section within a Segment in a Mach-O file.
+     */
     class Section {
         private static final int SECTION_NAME_POSITION = 0;
         private static final int OFFSET_POSITION = 40;
@@ -111,6 +114,10 @@ public class Segment extends AbstractMachOCommand {
         private static final int SIZE_POSITION = 36;
         private final int sectionOffset;
 
+        /**
+         * Construct a section, given the section number.
+         * @param sectionNumber
+         */
         Section(int sectionNumber){
             this.sectionOffset = SECTION_HEADER_SIZE * sectionNumber + FIRST_SECTION_POSITION;
         }
